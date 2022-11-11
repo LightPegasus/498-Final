@@ -16,3 +16,8 @@ window.onmousemove = function (e) {
     tooltipSpan.style.top = (y + 20) + 'px';
     tooltipSpan.style.left = (x) + 'px';
 };
+
+function startButton() {
+    let question = document.getElementById("question_container");
+    question.innerHTML = 'Click on California';
+}
