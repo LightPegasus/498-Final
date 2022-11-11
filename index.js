@@ -57,3 +57,7 @@ function newQuestion() {
 }
 
 
+function startButton() {
+    let question = document.getElementById("question_container");
+    question.innerHTML = 'Click on California';
+}

@@ -12,10 +12,10 @@
 <body>
     <div id="nav_bar_top">
         <button onclick="startButton()">Start</button>
+        <button id="resetTimer">Reset</button>
         <h1>States Map Challenge</h1>
-        <!-- questions will display here -->
         <button onclick = "newQuestion()"> New Question </button>
-        <div id="question"></div>
+        <h2 id="question_container"></h2>
     </div>
     <div id="container">
         <div id="details-box"></div>
@@ -473,6 +473,10 @@
                 00 : 00 : 00 : 000
             </div>
         </div>
+        <div id="points_container">
+            <h4>Total Points: 50</h4>
+            <p>Current Points: <span id="current_points">0</span>/50</p>
+        </div>
         <script>
             let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
             let timerRef = document.querySelector('.timerDisplay');
@@ -517,9 +521,6 @@
             timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
             }
         </script>
-        <div id="points_container">
-            <h3>Points: <span id="current_points">0</span>/50</h3>
-        </div>
     </div>
 
     <div id="enterName">
