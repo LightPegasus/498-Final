@@ -1,5 +1,7 @@
 var tooltipSpan = document.getElementById('details-box');
 
+let current_points = 0;
+
 document.addEventListener('mouseover', function (e) {
     if (e.target.tagName == 'path') {
         var content = e.target.dataset.name;
