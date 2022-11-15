@@ -14,7 +14,7 @@ if db.is_connected():
     record = cursor.fetchone()
     print("You're connected to database:", record)
     cursor.execute("CREATE TABLE IF NOT EXISTS user_leaderboard(name VARCHAR(50), score int, time TIME, id int PRIMARY KEY AUTO_INCREMENT)")
-    cursor.execute("SHOW TABLES;")                              ``````
+    cursor.execute("SHOW TABLES;")
     tableRecords = cursor.fetchall()
     print("Tables in database:", tableRecords)
     cursor.close()
