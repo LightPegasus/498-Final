@@ -11,9 +11,13 @@
 </head>
 <body>
     <div id="nav_bar_top">
-        <button onclick="startButton()">Start</button>
+        <button id="startTimer">Start</button>
+        <button id="resetTimer">Reset</button>
         <h1>States Map Challenge</h1>
-        <h2 id="question_container"></h2>
+        <div id = "question display">
+            <!-- questions will display here -->
+            <button onclick = "newQuestion()"> New Question </button>
+        </div>
     </div>
     <div id="container">
         <div id="details-box"></div>
@@ -464,7 +468,67 @@
     </div>
     <div id="nav_bar_bot">
         <h4>Timer</h4>
-        <h4>Points</h4>
+        <div class="container">
+            <div class="timerDisplay">
+                00 : 00 : 00 : 000
+            </div>
+            <!--  
+            <div class="buttons"> 
+                <button id="pauseTimer">Pause</button>
+                <button id="startTimer">Start</button>
+                <button id="resetTimer">Reset</button>
+            </div>
+            -->
+        </div>
+        </div>
+        <script>
+            let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
+            let timerRef = document.querySelector('.timerDisplay');
+            let int = null;
+            document.getElementById('startTimer').addEventListener('click', ()=>{
+                if(int!==null){
+                    clearInterval(int);
+                }
+                int = setInterval(displayTimer,10);
+            });
+            
+            
+
+            // document.getElementById('pauseTimer').addEventListener('click', ()=>{
+            //     clearInterval(int);
+            // });
+
+            document.getElementById('resetTimer').addEventListener('click', ()=>{
+                clearInterval(int);
+                [milliseconds,seconds,minutes,hours] = [0,0,0,0];
+                timerRef.innerHTML = '00 : 00 : 00 : 000 ';
+            });
+            function displayTimer(){
+                milliseconds+=10;
+                if(milliseconds == 1000){
+                    milliseconds = 0;
+                    seconds++;
+                    if(seconds == 60){
+                        seconds = 0;
+                        minutes++;
+                        if(minutes == 60){
+                            minutes = 0;
+                            hours++;
+                        }
+                    }
+                }
+            let h = hours < 10 ? "0" + hours : hours;
+            let m = minutes < 10 ? "0" + minutes : minutes;
+            let s = seconds < 10 ? "0" + seconds : seconds;
+            let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
+
+            timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
+            }
+        </script>
+        <div id="points_container">
+            <h4>Total Points: 50</h4>
+            <p>Current Points: <span id="current_points">0</span>/50</p>
+        </div>
     </div>
 </body>
 </html>
