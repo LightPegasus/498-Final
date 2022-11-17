@@ -25,6 +25,24 @@ var stateNames = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Col
 
 
 function newQuestion() {
+    if (stateNames.length == 0){
+            clearInterval(int);
+            time = ` ${h} : ${m} : ${s} : ${ms}`;
+    }
     var randomNumber = Math.floor(Math.random()*(stateNames.length));
-    document.getElementById('question display').innerHTML = stateNames[randomNumber];
+    var randState = stateNames[randomNumber];
+    document.getElementById('question display').innerHTML = randState;
+    //stateNames.remove(randState);
+    for( var i = 0; i < stateNames.length; i++){                                 
+        if ( stateNames[i] === randState) { 
+            stateNames.splice(i, 1); 
+            i--; 
+        }
+    }
 }
+
+// window.onload = function() {
+//     //when the document is finished loading, replace everything
+//     //between the <a ...> </a> tags with the value of splitText
+// document.getElementById("destination").innerHTML = time;
+// } 
