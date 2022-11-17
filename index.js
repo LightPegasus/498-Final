@@ -1,5 +1,6 @@
 var tooltipSpan = document.getElementById('details-box');
 const scoreText = document.getElementById('current_points');
+const answerDisplay = document.getElementById('answer display');
 
 let current_points = 0;
 
@@ -22,6 +23,10 @@ document.addEventListener('click', (e) => {
         if (answer === question) {
             current_points++;
             scoreText.innerText = current_points;
+            answerDisplay.innerText = "Correct!!";
+        }
+        else {
+            answerDisplay.innerText = "Wrong!!";
         }
     }
 })
@@ -38,7 +43,7 @@ var stateNames = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Col
                 'North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota',
                 'Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming,']
 
-
+  
 function newQuestion() {
     var randomNumber = Math.floor(Math.random()*(stateNames.length));
     document.getElementById('question display').innerHTML = stateNames[randomNumber];
