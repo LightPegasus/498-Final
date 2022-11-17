@@ -1,4 +1,5 @@
 var tooltipSpan = document.getElementById('details-box');
+const scoreText = document.getElementById('current_points');
 
 let current_points = 0;
 
@@ -12,6 +13,17 @@ document.addEventListener('mouseover', function (e) {
         document.getElementById("details-box").style.opacity = "0%";
     }
 });
+
+document.addEventListener('click', (e) => {
+    let question = document.getElementById('question display').innerHTML
+    if (e.target.tagName == 'path') {
+        let answer = e.target.dataset.name;
+        if (answer === question) {
+            current_points++;
+            scoreText.innerText = current_points;
+        }
+    }
+})
 
 window.onmousemove = function (e) {
     var x = e.clientX, y = e.clientY;
@@ -30,3 +42,5 @@ function newQuestion() {
     var randomNumber = Math.floor(Math.random()*(stateNames.length));
     document.getElementById('question display').innerHTML = stateNames[randomNumber];
 }
+
+
