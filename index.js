@@ -3,6 +3,8 @@ const scoreText = document.getElementById('current_points');
 
 let current_points = 0;
 
+let current_points = 0;
+
 document.addEventListener('mouseover', function (e) {
     if (e.target.tagName == 'path') {
         var content = e.target.dataset.name;
