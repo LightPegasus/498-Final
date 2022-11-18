@@ -4,18 +4,6 @@ const answerDisplay = document.getElementById('answer display');
 
 let current_points = 0;
 
-
-// document.addEventListener('mouseover', function (e) {
-//     if (e.target.tagName == 'path') {
-//         var content = e.target.dataset.name;
-//         document.getElementById("details-box").innerHTML = content;
-//         document.getElementById("details-box").style.opacity = "100%";
-//     }
-//     else {
-//         document.getElementById("details-box").style.opacity = "0%";
-//     }
-// });
-
 document.addEventListener('click', (e) => {
     let question = document.getElementById('question display').innerHTML
     if (e.target.tagName == 'path') {
@@ -61,3 +49,5 @@ function startButton() {
     let question = document.getElementById("question_container");
     question.innerHTML = 'Click on California';
 }
+
+

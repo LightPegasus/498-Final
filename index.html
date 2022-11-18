@@ -18,7 +18,7 @@
         <h2 id="question_container"></h2>
     </div>
     <div id="container">
-        <div id="details-box"></div>
+        <!-- <div id="details-box"></div> -->
         <div id="answer display">Correct!!</div>
         <svg
         xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -468,14 +468,10 @@
     <div id="nav_bar_bot">
         <div id="timer-style">
             <h3>Timer: </h3>
-            <!-- <div class="container"> -->
             <div class="timerDisplay">
                 00 : 00 : 00 : 000
             </div>
         </div>
-        <div id="points_container">
-            <h4>Total Points: 50</h4>
-            <p>Current Points: <span id="current_points">0</span>/50</p>
         </div>
         <script>
             let [milliseconds,seconds,minutes,hours] = [0,0,0,0];
@@ -521,6 +517,25 @@
             timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
             }
         </script>
+        <div id="points_container">
+            <h3>Points: <span id="current_points">0</span>/50</h3>
+        </div>
+    </div>
+
+    <div id="enterName">
+        <form>
+            <label for="enterName">Enter a name:</label><br>
+            <input type="text" autocomplete="off" id="userName">
+            <button type="submit" class="submitButton">Submit</button>
+        </form>
+    </div>
+
+    <div id="enterName">
+        <form>
+            <label for="enterName">Enter a name:</label><br>
+            <input type="text" autocomplete="off" id="userName">
+            <button type="submit" class="submitButton">Submit</button>
+        </form>
     </div>
 
     <div id="enterName">
