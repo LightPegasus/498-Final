@@ -1,15 +1,35 @@
 var tooltipSpan = document.getElementById('details-box');
+const scoreText = document.getElementById('current_points');
+const answerDisplay = document.getElementById('answer display');
 
-document.addEventListener('mouseover', function (e) {
+let current_points = 0;
+
+
+// document.addEventListener('mouseover', function (e) {
+//     if (e.target.tagName == 'path') {
+//         var content = e.target.dataset.name;
+//         document.getElementById("details-box").innerHTML = content;
+//         document.getElementById("details-box").style.opacity = "100%";
+//     }
+//     else {
+//         document.getElementById("details-box").style.opacity = "0%";
+//     }
+// });
+
+document.addEventListener('click', (e) => {
+    let question = document.getElementById('question display').innerHTML
     if (e.target.tagName == 'path') {
-        var content = e.target.dataset.name;
-        document.getElementById("details-box").innerHTML = content;
-        document.getElementById("details-box").style.opacity = "100%";
+        let answer = e.target.dataset.name;
+        if (answer === question) {
+            current_points++;
+            scoreText.innerText = current_points;
+            answerDisplay.innerText = "Correct!!";
+        }
+        else {
+            answerDisplay.innerText = "Wrong!!";
+        }
     }
-    else {
-        document.getElementById("details-box").style.opacity = "0%";
-    }
-});
+})
 
 window.onmousemove = function (e) {
     var x = e.clientX, y = e.clientY;
@@ -23,7 +43,7 @@ var stateNames = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Col
                 'North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota',
                 'Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming,']
 
-
+  
 function newQuestion() {
     if (stateNames.length == 0){
             clearInterval(int);
