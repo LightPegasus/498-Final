@@ -31,17 +31,11 @@ document.addEventListener('click', (e) => {
     }
 })
 
-window.onmousemove = function (e) {
-    var x = e.clientX, y = e.clientY;
-    tooltipSpan.style.top = (y + 20) + 'px';
-    tooltipSpan.style.left = (x) + 'px';
-};
-
 var stateNames = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida',
                 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts',
                 'Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York',
                 'North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota',
-                'Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming,']
+                'Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 
   
 function newQuestion() {
@@ -59,10 +53,7 @@ function newQuestion() {
             i--; 
         }
     }
+    document.getElementById('enterName').style.display = "block";
 }
 
-// window.onload = function() {
-//     //when the document is finished loading, replace everything
-//     //between the <a ...> </a> tags with the value of splitText
-// document.getElementById("destination").innerHTML = time;
-// } 
+
