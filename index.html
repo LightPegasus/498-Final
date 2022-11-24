@@ -17,8 +17,8 @@
         <div id="nav_bar_top">
             <button id="startTimer" onclick="startButton()">Start</button>
             <button id="resetTimer" onclick="resetButton()">Reset</button>
-            <h1>States Map Challenge</h1>
-            <button onclick="newQuestion()">New Question</button>
+            <h1 id="title">States Map Challenge</h1>
+            <button id="newButton" onclick="skipButton()">New Question</button>
             <h2 id="question_container"></h2>
         </div>
 
@@ -523,7 +523,7 @@
         </div>
 
         <div id="nav_bar_bot">
-            <div id="timer-style">
+            <div id="timer_style">
                 <h3>Timer:</h3>
                 <div class="timerDisplay">00 : 00 : 00 : 000</div>
             </div>
@@ -570,7 +570,7 @@
                             ? "0" + milliseconds
                             : milliseconds;
 
-                    timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
+                    timerRef.innerHTML = `${h} : ${m} : ${s} : ${ms}`;
                 }
             </script>
             <div id="points_container">
