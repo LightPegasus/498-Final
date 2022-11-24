@@ -45,7 +45,7 @@ path:hover {
     cursor: pointer;
 }
 
-#timer-style {
+#timer_style {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: auto;
@@ -95,7 +95,47 @@ path:hover {
     background: #f1f1f1;
 }
 
-/* media for responsive website
-@media screen and (max-width: 600px) {
-
-} */
+@media screen and (max-width: 768px) {
+    #startTimer {
+        grid-area: gridStart;
+    }
+    #resetTimer {
+        grid-area: gridReset;
+    }
+    #title {
+        grid-area: gridTitle;
+    }
+    #newButton {
+        grid-area: gridNewButton;
+    }
+    #question_container {
+        grid-area: gridQuestion;
+    }
+    #timer_style {
+        grid-area: gridTimer;
+    }
+    #points_container {
+        grid-area: gridPoints;
+    }
+    #nav_bar_top {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "gridTitle"
+            "gridStart" "gridReset"
+            "gridNewButton"
+            "gridQuestion";
+    }
+    #nav_bar_bot {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "gridTimer"
+            "gridPoints";
+    }
+    #container {
+        overflow: scroll;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
